@@ -1,7 +1,5 @@
 package com.br.terceiroTeste.entities;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +16,7 @@ public class CandidatoEntity {
 	@Column
 	private String nome;
 	
-	@Column(name = "status", nullable = false, columnDefinition = "varchar(255) default 'Recebido'")
+	@Column
 	private String status;
 
 	public Long getCodCandidato() {
@@ -49,15 +47,4 @@ public class CandidatoEntity {
 		this.setStatus(status);
 	}
 
-	
-	
-
-//	public void candidatoInfo() {
-//
-//		System.out.println("\n     "+this.nomeCandidato);
-//		System.out.println("**************************************");
-//		System.out.println("id: " + this.codCandidato);
-//		System.out.println("status: " + this.statusCandidato+"");
-//		System.out.println("**************************************\n");
-//	}
 }
