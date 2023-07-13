@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.terceiroTeste.entities.CandidatoEntity;
-import com.br.terceiroTeste.repositories.CandidatoRepository;
 import com.br.terceiroTeste.services.CandidatoService;
 
 @RequestMapping("/api/v1/hiring")
@@ -23,12 +22,6 @@ public class CandidatoController {
 	
 	@Autowired
 	private CandidatoService candidatoService;
-
-	@GetMapping
-	public List<CandidatoEntity> getAll() {
-		return candidatoService.buscaTodosUsuarios();
-
-	}
 
 	@GetMapping("/status/candidate/{codCandidato}")
 	public Optional<CandidatoEntity> verificarCandidato(@PathVariable Long codCandidato) {

@@ -22,27 +22,22 @@ public class CandidatoService {
 	public String qualificado() {
 		return status = "Qualificado";
 	}
-	
+
 	public String recebido() {
 		return status = "Recebido";
 	}
 
-
 	@Autowired
 	private CandidatoRepository candidatoRepository;
 
-	public List<CandidatoEntity> buscaTodosUsuarios(){
-		return candidatoRepository.findAll();
-	}
-
-	public Optional<CandidatoEntity> verificarCandidato(@PathVariable Long codCandidato){
+	public Optional<CandidatoEntity> verificarCandidato(@PathVariable Long codCandidato) {
 		return candidatoRepository.findById(codCandidato);
 	}
 
 	public List<CandidatoEntity> listarAprovados() {
 		return candidatoRepository.findByStatus("Aprovado");
 	}
-	
+
 	public void salvaUsuario(CandidatoEntity candidatoEntity) {
 		candidatoEntity.setStatus(recebido());
 		candidatoRepository.save(candidatoEntity);
@@ -69,6 +64,5 @@ public class CandidatoService {
 		}
 
 	}
-
 
 }
